@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/facultyLogin.css' %}"> 
+    <title>Faculty Login</title>
+</head>
+<body>
+    <div class="container">
+        <h3 style="font-weight: bold;">FACULTY LOGIN</h3>
+        <form class="form-class" action="{% url 'facultyLogin' %}" method="POST">   
+            
+            {% csrf_token %}
+
+            <input type="text" id="facultyId" name="facultyId" placeholder="Enter Your Faculty ID">
+            
+            <input type="password" id="facultyPassword" name="facultyPassword" placeholder="Enter Your password">
+            
+            <button id="facultyRegistrationBtn">LOGIN</button>
+        </form>
+    </div>
+</body>
+</html>

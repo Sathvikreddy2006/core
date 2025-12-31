@@ -1,0 +1,134 @@
+body{
+    position: relative;
+    margin:0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../images/studentRegistrationBG.jpg");
+    background-size: cover;
+    opacity: 1;
+    z-index: -1;
+}
+
+.container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    width: 350px;
+    margin-top: 50px;
+    margin-left: 700px;
+    background-color: rgba(240,240,240,0.1);    
+    border-radius: 15px;
+    padding: 20px;  
+
+}
+
+.form-class{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    margin: 40px;
+    margin-bottom: 10px;
+}
+
+.inputBox{
+    height: 35px;
+    width:300px;
+    border-radius: 15px;
+    border-width: 0;
+    text-align: center;
+}
+
+.inputBox:hover{
+    scale:1.3;
+    transition-duration: 0.5s;
+    background-color: beige;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+#file-name {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+button{
+    margin-top: 30px;
+    margin-bottom: 0;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    border-width: 0;
+    background-color: #25D366;
+}
+
+button:hover{
+    scale:1.2;
+    background-color: #3be67a;
+    transition-duration: 0.5s;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color:white;
+}
+
+#passError{
+    display:none;
+    color: rgba(255, 0, 0, 0.594);
+}
+
+label{
+    color: azure;
+}
+
+form.form-control{
+    height: 35px;
+    width:300px;
+    border-radius: 15px;
+    border-width: 0;
+    text-align: center;
+}
+
+#id_studentName{
+    height: 35px !important;
+    width:300px !important;
+    border-radius: 15px !important;
+    border-width: 0 !important;
+    text-align: center !important;
+}

@@ -1,0 +1,30 @@
+<video id="video" width="320" height="240" autoplay></video>
+<canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+<button onclick="capture()">Scan Face</button>
+<p id="result"></p>
+
+<script>
+    const video = document.getElementById('video');
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        video.srcObject = stream;
+    });
+
+    function capture() {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, 320, 240);
+        canvas.toBlob(blob => {
+            const formData = new FormData();
+            formData.append('image', blob);
+
+            fetch('/verify-face/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('result').textContent = data.match ? '✅ Face matched' : '❌ Face not matched';
+            });
+        }, 'image/jpeg');
+    }
+</script>

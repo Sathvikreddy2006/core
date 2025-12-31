@@ -1,0 +1,65 @@
+
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+
+.qr-section{
+    width: auto;
+    height: auto;
+}
+
+.attendance-section{
+    
+    width: auto;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+    
+#logout{
+    margin: 20px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#facultyLogOut{
+    background-color: #25D366 ;
+    height: 35px;
+    Width: 120px;    
+    border-radius: 9px;
+    border: 0.3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.5s;
+}
+
+#facultyLogout:hover{
+    background-color: #25D366;
+    transform: scale(1.5);    
+    border-radius: 9px;
+    border: 0.3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}    
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+}
+

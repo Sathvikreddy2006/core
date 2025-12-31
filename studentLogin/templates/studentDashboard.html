@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/studentDashboard.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <title>Student Dashboard</title>
+    </head>
+    <body>
+        
+
+        <div id="container1">
+            <div id="profileName" >
+                <div id="profile" >
+                    <img src="{{ student.image.url }}" alt="{{ student.studentName }}'s Image" >
+                </div>
+                <p style="font-size: medium; position:relative ;">{{ student.studentName }}</p>
+            </div>
+        </div>    
+
+        <div id="container2">
+            
+            <!-- <button id="uploadImage">
+                <div id="uploadImgLogo">
+                    <i class="fa-solid fa-camera"></i>
+                </div>            
+            </button> -->
+
+            <div id="attendance-block" >
+                <p style="font-size: 20px;" >Attendance:</p>
+                <div id="attendancePer">
+                    <h2>{{attendance_percentage}}</h2>
+                </div>
+            </div>
+
+            <a href="{% url 'mark_attendance' %}" id="scanqr">
+                <div id="scanqrlogo">
+                    <i class="fa-solid fa-expand"></i>
+                </div>            
+            </a>
+        </div>
+
+        <form action="{% url 'studentLogout' %}" method="post" id="logout">
+        {% csrf_token %}
+        <button type="submit" id="studentLogOut">Logout</button>
+        </form>        
+    </body>
+</html>

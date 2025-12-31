@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan QR for Attendance</title>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+    <h2>Scan QR Code</h2>
+    <div id="reader" style="width: 300px;"></div>
+
+    <form id="qrForm" method="POST" action="{% url 'mark_attendance' %}">
+        {% csrf_token %}
+        <input type="hidden" name="qr_code_data" id="qr_code_data">
+    </form>
+
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            document.getElementById('qr_code_data').value = decodedText;
+            document.getElementById('qrForm').submit();
+        }
+
+        const html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+            fps: 10,
+            qrbox: 250,
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+        });
+
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+</body>
+</html>

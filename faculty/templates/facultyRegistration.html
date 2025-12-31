@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/facultyRegistration.css' %}">
+    <title>Faculty Registratiton</title>
+</head>
+<body>
+    <div class="container">
+        <h3 style="font-weight: bold;">FACULTY REGISTRATION</h3>
+        <form class="form-class">
+            <input type="text" id="facultyName" placeholder="Enter Your Name">
+            <input type="text" id="facultyID" placeholder="Enter Your Faculty ID">
+            <input type="text" id="phoneNum" placeholder="Enter Your Phone Number">
+            <input type="password" id="facultyPassword" placeholder="Enter Your password">
+            <input type="password" id="confirmfacultyPassword" placeholder="Confirm Password">
+            <span id="passError">Passwords didnt match!</span>
+            <button id="facultyRegistrationBtn" >REGISTER</button>
+        </form>
+        
+    </div>
+</body>
+<script>
+    document.getElementById("facultyRegistrationBtn").addEventListener("click", function(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("facultyName").value.trim();
+        let facultyId = document.getElementById("facultyID").value.trim();
+        let phonenum = document.getElementById("phoneNum").value.trim();
+        let password = document.getElementById("facultyPassword").value.trim();
+        let confirmPassword = document.getElementById("confirmfacultyPassword").value.trim();
+
+        if (name===''){
+            //nameError.style.display = 'block' ;
+            facultyName.style.border= "3px solid red";
+            return;
+            
+        }
+        else if (facultyId===''){
+            facultyID.style.border= "3px solid red";
+            return;
+        }
+        else if(facultyId.length<10){
+            facultyID.style.border= "3px solid red";
+            return;
+        }
+        else if(phonenum.length<10){
+            phoneNum.style.border= "3px solid red";
+            return;
+        }
+        else if(password.length<=6){
+            facultyPassword.style.border= "3px solid red";
+            return;
+        }
+        else if(password != confirmPassword){
+            passError.style.display = 'block';
+            return;
+        }
+        else{
+            alert("Registration Successfull");
+            
+        }
+
+    });
+</script>
+
+</html>

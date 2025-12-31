@@ -1,0 +1,246 @@
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(Screenshot\ 2025-02-18\ 153900.png);
+    background-size: cover;
+    opacity: 1;
+    z-index: -1;
+}
+
+#outerBox{
+    margin:0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#container1{    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;    
+    align-items: center;    
+}
+
+#container3{
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;    
+    height: 240px;
+    width:650px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;   
+    background-color: rgba(255,255,255,0.5);
+}
+
+#container2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;   
+}
+
+#profileName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+#profileName:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    margin: 20px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;    
+    background-size: cover;    
+    flex-wrap: wrap;
+}
+
+p{
+    font-size: 28px;
+    font-weight:normal;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#attendance-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 200px;
+    width:320px;
+    margin:20px;
+    background-color: rgba(255,255,255,0.5);
+    transition-duration: 0.5s;
+}
+#attendance-block:hover{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    height: 200px;
+    width:320px;
+    margin:20px;
+    background-color: rgba(255,255,255,0.5);
+    scale: 1.15;
+    
+}
+
+#attendancePer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 120px;
+    width:120px;
+    border:0.2rem solid black;
+}
+
+#uploadImage{
+    height: 200px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;   
+    background-color: rgba(0, 0, 0, 0); 
+    border: 0rem;
+    background-color: rgba(255,255,255,0.5);
+    transition-duration: 0.5s;
+}
+#uploadImage:hover{
+    height: 200px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;   
+    scale:1.15 ;
+    border: 0rem;
+}
+
+#uploadImgLogo{
+    font-size: 3rem;
+    transition-duration: 0.4s;
+}
+#uploadImgLogo:hover{
+    font-size: 5rem;
+}
+
+#scanqrlogo{
+    font-size: 3rem;
+    transition-duration: 0.4s;
+}
+#scanqrlogo:hover{
+    font-size: 5rem;
+}
+
+#scanqr{
+    height: 200px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;   
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: 0rem;
+    transition-duration: 0.5s;
+
+}
+#scanqr:hover{
+    height: 200px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;   
+    border: 0rem;
+    scale: 1.15;
+}
+
+#graph{
+    background-size: cover;
+    height: 255px;
+    width:550px;
+    scale:0.7;
+}
+
+#logout{
+    margin: 20px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#studentLogOut{
+    background-color: #25D366;
+    height: 35px;
+    width: 120px;    
+    border-radius: 9px;
+    border: 0.3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.5s;
+}
+
+#studentLogOut:hover{
+    background-color: #25D366;
+    scale: 1.5 ;    
+    border-radius: 9px;
+    border: 0.3px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+

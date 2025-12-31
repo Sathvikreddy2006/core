@@ -1,0 +1,44 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/studentLogin.css' %}"> 
+    <title>Student Login</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h3 style="font-weight: bold; color:antiquewhite; text-decoration: underline;">STUDENT LOGIN</h3>
+        <form class="form-class" method="post" action="">
+            {% csrf_token %}
+            
+
+            <!-- Hall Ticket Number -->
+            <div class="form-group">                
+                {{ form.hallTicketNum | add_class_and_placeholder:"inputBox,Hall Ticket Number" }}    
+                {% if form.hallTicketNum.errors %}
+                    <div class="error">{{ form.hallTicketNum.errors }}</div>
+                {% endif %}                
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                
+                {{ form.studentPassword | add_class_and_placeholder:"inputBox,Enter Password"}}
+                {% if form.studentPassword.errors %}
+                    <div class="error">{{ form.studentPassword.errors }}</div>
+                {% endif %}
+            </div>
+
+            <button id="studentLoginBtn">LOGIN</button>  
+        </form>
+        <p style="display: inline; color:rgb(159, 154, 154)">Dont have an acc?</p>
+        <a href ="{% url 'studentRegistration' %}" style="display: inline;">Register here.</a>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/studentRegistration.css' %}">
+        <title>Student Registratiton</title>
+    </head>
+    <body>
+        <div class="container">
+            <h3 style="font-weight: bold; color:aliceblue; text-decoration: underline;">STUDENT REGISTRATION</h3>
+            <form class="form-class" enctype="multipart/form-data" method="post" action="">
+
+                {% csrf_token %}
+                
+                <div class="form-group">        
+                    {{ form.studentName | add_class_and_placeholder:"inputBox,Student Name" }}
+                    {% if form.studentName.errors %}
+                        <div class="error">{{ form.studentName.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    
+                    {{ form.hallTicketNum | add_class_and_placeholder:"inputBox,Hall Ticket Number" }}
+                    {% if form.hallTicketNum.errors %}
+                        <div class="error">{{ form.hallTicketNum.errors }}</div>
+                    {% endif %}
+                    
+                </div>
+            
+                <div class="form-group">
+                    
+                    {{ form.phoneNum | add_class_and_placeholder:"inputBox,Student Phone Number" }}
+                    {% if form.phoneNum.errors %}
+                        <div class="error">{{ form.phoneNum.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    
+                    {{ form.image }}
+                    {% if form.image.errors %}
+                        <div class="error">{{ form.image.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    
+                    {{ form.studentPassword | add_class_and_placeholder:"inputBox,Password" }}
+                    {% if form.studentPassword.errors %}
+                        <div class="error">{{ form.studentPassword.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    
+                    {{ form.confirm_password | add_class_and_placeholder:"inputBox,confirmPassword" }}
+                    {% if form.confirm_password.errors %}
+                        <div class="error">{{ form.confirm_password.errors }}</div>
+                    {% endif %}
+                </div>
+
+                <button id="studentRegistrationBtn" type="submit" >REGISTER</button>
+            </form>            
+        </div>
+    </body>
+</html>
