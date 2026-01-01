@@ -78,8 +78,8 @@ def mark_attendance(request):
 
         student_ip = getStudentIp(request)
 
-        if not sameSubnet(faculty_ip, student_ip):
-            return HttpResponse("You must be on the same network as your faculty.")
+        #if not sameSubnet(faculty_ip, student_ip):
+        #    return HttpResponse("You must be on the same network as your faculty.")
 
 
         try:
